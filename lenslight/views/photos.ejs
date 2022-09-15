@@ -1,0 +1,49 @@
+<%- include("partials/_header") %>
+
+<body class="main-layout inner_page">
+   <!-- loader  -->
+   <div class="loader_bg">
+      <div class="loader"><img src="/images/loading.gif" alt="#" /></div>
+   </div>
+   <!-- end loader -->
+
+   <%- include("partials/_navbar") %>
+   <!-- gallery -->
+   <div class="gallery">
+      <div class="container_with">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="titlepage text_align_center">
+                  <h2>Other Users gallery</h2>
+               </div>
+            </div>
+         </div>
+         <div class="tz-gallery">
+            <div class="row">
+               <% if(result.length>0){ %>
+                  <% for(photo of result){ %>
+                     <div class="col-lg-4 col-md-6 ma_bottom30">
+                        <div class="lightbox">
+                           <img src="<%= photo.url %>" alt="Bridge">
+                           <div class="view_main">
+                              <div class="pose">
+                                 <a class="read_more" href="/photo/<%= photo._id%>"><img src="images/ga.png" alt="#" /></a>
+                                 <p><%= photo.name %></p><br>
+                                 <p><%= photo.description.substring(0,80) %>...</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  <% } %>
+               <% }else{ %>
+                  <div class="col-md-12" style="text-align:center;margin-bottom: 100px;">
+                     <p><b>Diğer kullanıcıların paylaştığı fotoğraf yok</b></p>
+                  </div>
+               <% }%>
+
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- end gallery -->
+   <%- include("partials/_footer") %>

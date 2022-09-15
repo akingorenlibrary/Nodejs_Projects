@@ -1,0 +1,81 @@
+<%- include("partials/_header") %>
+<body class="main-layout">
+   <!-- loader  -->
+   <div class="loader_bg">
+      <div class="loader"><img src="/images/loading.gif" alt="#" /></div>
+   </div>
+   <!-- end loader -->
+   <%- include("partials/_navbar") %>
+   
+   <div class="customers">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-12">
+             <div class="titlepage text_align_center">
+                <h2><%= user.username %></h2>
+             </div>
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-md-12">
+             <div class="satteb text_align_center">
+                <p>fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                   The point of using Lorem Ipsum is that itfact that a reader will be distracted by the readable
+                   content of a page when looking at its layout. The point of using Lorem Ipsum is that itfact that a
+                   reader will be distracted by the readable content of a page when looking at its layout. The point
+                   of using Lorem Ipsum is that itfact that a reader will be distracted by the readable content of a
+                   page when looking at its layout. The point of using Lorem Ipsum is that it</p>
+                <h3>The point of using </h3>
+                <i><img src="/images/custo.jpg" alt="#" /></i>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+
+ <div class="container">
+   <div class="row">
+     <div class="col-md-12">
+       <div class="text_align_center">
+        <% if(isFollowers){ %>
+         <a style="margin:20px auto;" class="read_more" href="/user/<%= user._id %>/unfollow?_method=PUT">UNFOLLOW</a>
+        <% }else{ %>
+         <a style="margin:20px auto;" class="read_more" href="/user/<%= user._id %>/follow?_method=PUT">FOLLOW</a>
+        <% } %>
+       </div>
+     </div>
+   </div>
+ </div>
+
+      <div class="gallery">
+        <div class="container_with">
+           <div class="row">
+              <div class="col-md-12">
+                 <div class="titlepage text_align_center">
+                    <h2>Her/His gallery</h2>
+                 </div>
+              </div>
+           </div>
+           <div class="tz-gallery">
+              <div class="row">
+                 <% for(photo of userphotos){ %>
+                    <div class="col-lg-4 col-md-6 ma_bottom30">
+                       <div class="lightbox">
+                          <img src="<%= photo.url %>" alt="Bridge">
+                          <div class="view_main">
+                             <div class="pose">
+                                <a class="read_more" href="/photo/<%= photo._id%>"><img src="/images/ga.png" alt="#" /></a>
+                                <p><%= photo.name %></p><br>
+                                <p><%= photo.description.substring(0,80) %>...</p>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 <% } %>
+              </div>
+           </div>
+        </div>
+     </div>
+
+
+   <%- include("partials/_footer") %>

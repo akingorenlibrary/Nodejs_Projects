@@ -1,0 +1,68 @@
+<%- include("partials/_header") %>
+   <!-- body -->
+   <body class="main-layout inner_page">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="images/loading.gif" alt="#"/></div>
+      </div>
+      <!-- end loader -->
+     
+         
+   <%- include("partials/_navbar") %>
+
+      <!-- contact -->
+        <div class="contact">
+          <div class="container">
+            <div class="row">
+               
+              <div class="col-md-12 ">
+                <div class="titlepage text_align_center">
+                  <h2>Register</h2>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+               <div style="display: none;" class="alert alert-success" id="alertSuccess"></div>
+            </div>
+
+              <div class="col-md-8 offset-md-2">
+                <form id="request" class="main_form" action="/register" method="POST">
+                  <div class="row">
+
+                    <div class="col-md-12">
+                      <input class="form_control" id="username" placeholder="username" type="type" name="username"> 
+                    </div>
+                    <div class="col-md-12">
+                     <div style="display: none;" class="alert alert-danger" id="usernameAlertDanger"></div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <input class="form_control" id="email" placeholder="Email" type="type" name="email">                          
+                    </div>
+                    <div class="col-md-12">
+                     <div style="display: none;" class="alert alert-danger" id="emailAlertDanger"></div>
+                  </div>
+
+                    <div class="col-md-12">
+                      <input class="form_control" id="password" placeholder="Password" type="type" name="password">
+                    </div>
+                    <div class="col-md-12">
+                     <div style="display: none;" class="alert alert-danger" id="passwordAlertDanger"></div>
+                  </div>
+
+                    <div class="col-md-12">
+                      <div class="group_form">
+                        <button class="send_btn">Register</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- end contact -->
+
+<%- include("partials/_footer") %>
+
