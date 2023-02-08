@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Marmara Üniversitesi Diş Hekimliği Fakültesi Internet Randevu Sistemi</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="./css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Randevu Sistemi</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/appointmentDetail">Randevu Bilgilerim</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/appointmentCancel">Randevu İptal</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/logout">Güvenli çıkış</a></li>
+                </ul>
+            </div>
+        </div>
+        </nav>
+        <!-- Page content-->
+        <div class="container" style="margin-bottom:100px">
+           <div class="card mt-5">
+            <div class="card-body">
+              <form id="dateForm">
+                <label class="form-label">Gün Seçin:</label>
+                <input type="date" class="form-control" id="date">
+                 <div class="invalid-feedback" id="dateInvalidFeedback">
+                </div>
+                <br><br>
+                <button type="submit" class="btn btn-dark btn-sm">Uygun Saatleri Getir</button>
+              </form>
+            </div>
+           </div>
+
+           <div class="card mt-5" style="display: none;" id="saatlerDiv">
+            <div class="card-header">Saatler</div>
+            <div class="card-body">
+            <form id="clockForm">
+                <div class="list-group">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <button type="button" class="btn btn-light clockBtn" value="09:00">09:00</button>
+                        </li>
+                        <li class="list-group-item">
+                            <button type="button" class="btn btn-light clockBtn" value="09:30">09:30</button>
+                        </li>
+                        <li class="list-group-item">
+                            <button type="button" class="btn btn-light clockBtn" value="10:00">10:00</button>
+                        </li>
+                        <li class="list-group-item">
+                            <button type="button" class="btn btn-light clockBtn" value="10:30">10:30</button>
+                        </li>
+                        <li class="list-group-item">
+                            <button type="button" class="btn btn-light clockBtn" value="11:00">11:00</button>
+                        </li>
+                        <li class="list-group-item">
+                            <button type="button" class="btn btn-light clockBtn" value="11:00">11:30</button>
+                        </li>
+                        <li class="list-group-item">
+                            <button type="button" class="btn btn-light clockBtn" value="11:00">12:00</button>
+                        </li>
+
+                        
+                      </ul>
+                  </div>
+            </form>
+            </div>
+           </div>
+
+           <div class="alert alert-danger mt-5" style="display: none;" id="alertDanger" role="alert"></div>
+        </div>
+          
+         
+          <dialog id="successModal">
+            Randevunuz oluşturuldu.
+            <hr></hr>
+            <button id="close">Kapat</button>
+          </dialog>
+
+          <dialog id="failModal">
+            Hata Oluştu.
+            <hr></hr>
+            <button id="close">Kapat</button>
+          </dialog>
+
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <!-- Bootstrap core JS-->
+        <script src="./js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="./js/scripts.js"></script>
+        <script src="./js/developer/makeAppointment.js"></script>
+    </body>
+</html>
