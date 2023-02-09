@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Marmara Üniversitesi Diş Hekimliği Fakültesi Internet Randevu Sistemi</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="./css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Responsive navbar-->
+    <%- include("partials/_navbar") %>
+    <!-- Page content-->
+    <div class="container" style="margin-bottom:100px">
+        <div class="card mt-5">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12" style="text-align:center">
+                        <a type="button" href="/makeAppointment" class="btn btn-dark">Randevu Al</a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12" style="margin-top:40px">
+                        <br>
+                        <h4>Aktif Randevularım</h4>
+                        <hr></hr>
+                        <% if(query != ""){ %>
+                          <%  for(appointment of query){ %>
+                            <div class="card" id="appointmentCard" data-veri="<%= appointment._id %>">
+                            <div class="card-body">
+                              <%= appointment.date%> | Detay için tıklayın
+                            </div>
+                          </div>
+                          <br>
+                          <%} %>
+                        <% }else{ %>
+                        <p>Aktif randevunuz yok</p>
+                        <% } %>
+
+                       <div id="addCardArea">
+                        
+                       </div>
+
+                    </div>
+                </div>
+<!--
+                <% //if(query != "" && countDb>3){ %>
+                <div class="row" style="text-align:center"><div class="col-md-12">
+                    <button type="button" class="btn btn-secondary" id="addMoreBtn">Daha Fazla (3/<%=// countDb %>)</button>
+                </div></div>
+                <% //} %>
+            </div>
+        </div>
+-->
+
+  <!-- Modal -->
+  <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Randevu Detayı</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modalDetailArea">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Hata</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Hata Oluştu
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+          <!-- Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Başarılı</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              İşlem Başarılı
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Bootstrap core JS-->
+<script src="./js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="./js/scripts.js"></script>
+        <script src="./js/developerjs/appointmentDetailJS.js"></script>
+</body>
+
+</html>

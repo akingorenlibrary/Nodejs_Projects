@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Marmara Üniversitesi Diş Hekimliği Fakültesi Internet Randevu Sistemi</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Randevu Sistemi</a>
+            </div>
+        </div>
+        </nav>
+        <!-- Page content-->
+        <div class="container">
+           <div class="card mt-5">
+            <div class="card-body">
+               <form id="validationForm" action="/validation" method="POST">
+                
+                <div class="mb-3">
+                    <label for="TC" class="form-label">TC</label>
+                    <input type="number" id="tc" class="form-control" id="TC">
+                    <div id="tcFeedBack" class="invalid-feedback">
+                        asd
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-dark offset-5 mt-5">Tamam</button>
+               </form>
+            </div>
+           </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="/js/bootstrap.bundle.min.js"></script>
+        <script src="/js/developerjs/validationControl.js"></script>
+        <!-- Core theme JS-->
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
